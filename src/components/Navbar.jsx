@@ -13,7 +13,7 @@ const Navbar = () => {
         <Link to='/nail_paint' style={{textDecoration:'none' , color:'white'}}>NailPaint</Link>
         <Link to='/about' style={{textDecoration:'none' , color:'white'}}>About Us</Link>
         <Link to='/faq' style={{textDecoration:'none' , color:'white'}}>FAQ</Link>
-        <Link to='/cart'>< BsCartFill style={iconStyles} /></Link> 
+        <Link to='/shoppingcart'>< BsCartFill style={iconStyles} /></Link> 
         </div>
   )
 }

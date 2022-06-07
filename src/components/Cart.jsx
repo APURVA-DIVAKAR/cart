@@ -1,8 +1,12 @@
-import React from 'react'
+import React,{useContext} from 'react'
+import {AuthContext} from './AuthContext'
 
 const Cart = () => {
+  const {handleSignout} = useContext(AuthContext)
   return (
-    <div>Cart</div>
+    <div>
+      <button onClick={handleSignout}>Sign out</button>
+    </div>
   )
 }
 

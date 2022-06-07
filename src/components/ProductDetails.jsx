@@ -1,17 +1,18 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React,{useContext} from 'react'
+import { useParams,useNavigate } from 'react-router-dom'
 import  axios from 'axios'
+import {CartContext} from './CartContext'
 
 const ProductDetails = () => {
     const { id } = useParams()
-    console.log(id)
+    // console.log(id)
     const[data,setData] = React.useState({});
     const[isloading,setLoading] = React.useState(false);
     const[error,setError] = React.useState(false);
    
     React.useEffect(()=>{
       getData();
-      console.log(data)
+      // console.log(data)
     },[]);
     const getData = () =>{
       setLoading(true);
@@ -24,15 +25,23 @@ const ProductDetails = () => {
         // console.log(res.data)
         setLoading(false);
         setData(res.data);
-        console.log(data)
+        // console.log(data)
       })
       .catch(err=>{
         setLoading(false);
         setError(true)
-        console.log(err)
+        // console.log(err)
       })
     }
+    const navigate = useNavigate()
     const { brand,name,description,api_featured_image,category,price } = data
+    const [cart,handleCart] = useContext(CartContext)
+    console.log(cart, handleCart)
+    const Add = (data)=>{      
+      console.log(data)
+      handleCart(data);
+      navigate('/shoppingcart');      
+    }
   return (
     <div>
         <h1>
@@ -50,7 +59,7 @@ const ProductDetails = () => {
 
           </div>
           <div style={{textAlign:'center'}}>
-            <button style={{textAlign:'center',padding:'8px',backgroundColor:'skyblue',color:'white',border:'none'}}>Add to cart</button>
+            <button style={{textAlign:'center',padding:'8px',backgroundColor:'skyblue',color:'white',border:'none'}} onClick={()=>Add(data)}>Add to cart</button>
           </div>
         </div>
 
