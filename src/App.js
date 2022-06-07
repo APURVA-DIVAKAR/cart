@@ -14,6 +14,7 @@ import Bronzer from './components/Bronzer';
 import NailPaint from './components/NailPaint';
 import AboutUs from './components/AboutUs';
 import Faq from './components/Faq';
+import ProductDetails from './components/ProductDetails';
 
 function App() {
  return(
@@ -29,6 +30,7 @@ function App() {
         <Route path='/nail_paint' element={<NailPaint/>} ></Route>
         <Route path='/about' element={<AboutUs/>} ></Route>
         <Route path='/faq' element={<Faq/>} ></Route>
+        <Route path='/products/:id' element={<ProductDetails/>}></Route>
       </Routes>
       <Footer/>
    </>

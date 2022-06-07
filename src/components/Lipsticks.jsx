@@ -8,7 +8,7 @@ const Lipsticks = () => {
     const[error,setError] = React.useState(false);
     const[page,setPage] = React.useState(1);
     React.useEffect(()=>{
-    //   getData(page);
+      getData(page);
     },[]);
     const getData = (page) =>{
       setLoading(true);
