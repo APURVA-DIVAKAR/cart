@@ -36,9 +36,9 @@ const ProductDetails = () => {
     const navigate = useNavigate()
     const { brand,name,description,api_featured_image,category,price } = data
     const [cart,handleCart] = useContext(CartContext)
-    console.log(cart, handleCart)
+    // console.log(cart, handleCart)
     const Add = (data)=>{      
-      console.log(data)
+      // console.log(data)
       handleCart(data);
       navigate('/shoppingcart');      
     }
